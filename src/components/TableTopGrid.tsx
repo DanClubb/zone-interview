@@ -1,14 +1,21 @@
-import '../styles/table-top-grid.css'
+import React from "react";
+import '../styles/table-top-grid.css';
+import { RobotPosition } from "../types";
+import Robot from './Robot';
 
-export default function TableTopGrid() {
-    const cells: JSX.Element[] = []
-    for (let i = 0; i < 25; i++) {
-        cells.push(<div id="i" key='i' className="cell" data-testid="test"></div>)
-    }
+type TableTopGridProps = {
+    robotPosition: RobotPosition
+}
+
+export default function TableTopGrid({robotPosition}: TableTopGridProps) {
+    const cells = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25]
     
     return (
         <div className="table-top-grid">
-            {cells.map(cell => cell)}
+            {cells.map(cell => (
+                <div key={cell} className="cell" data-testid="cell"></div>
+            ))}
+            <Robot robotPosition={robotPosition} />
         </div>
     )
 }
