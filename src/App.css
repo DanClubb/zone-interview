@@ -1,60 +1,152 @@
 main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 5rem;
-  width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    width: 100vw;
+}
+
+h1 {
+    margin: 0 0 4rem;
+    text-align: center;
+    font-size: 2.5rem;
 }
 
 .robot {
-  width: 3rem;
-  height: 3rem;
-  background-color: dimgrey;
-   position: absolute;
-   transform: translate(50%, -50%);
-   transition: left, bottom, 1s;
+    width: 3rem;
+    height: 3rem;
+    background-color: dimgrey;
+    position: absolute;
+    transform: translate(50%, -50%);
+    transition: left, bottom, 1s;
+    z-index: 5;
 }
 
-.robot-controls {
-  width: 12rem;
-  height: 8rem;
-  position: relative;
+.robot-vision {
+    width: 0;
+    height: 0;
+    border-left: 2rem solid transparent;
+    border-right: 2rem solid transparent;
+    border-top: 3.5rem solid rgb(235, 209, 125);
+    border-radius: 50%;
+    position: absolute;
+    top: -1rem;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
 }
 
-.move, 
-.turn-north, 
-.turn-east, 
-.turn-south, 
+.robot-controls__buttons {
+    width: 12rem;
+    height: 8rem;
+    position: relative;
+}
+
+.move,
+.turn-north,
+.turn-east,
+.turn-south,
 .turn-west {
-  position: absolute;
+    position: absolute;
 }
 
 .move {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .turn-north {
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .turn-east {
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
 }
 
 .turn-south {
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .turn-west {
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.text-red {
+    color: rgb(199, 3, 3);
+}
+
+.robot-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.robot-controls__place {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    font-weight: 600;
+}
+
+.robot-controls__place > div {
+    padding: 0 0.25rem;
+    width: 100%;
+    background-color: transparent;
+    border: 2px solid #242424;
+    border-radius: 4px;
+    color: #242424;
+    font-size: 1.4rem;
+}
+
+select {
+    margin: 0.5rem;
+    background-color: transparent;
+    color: #242424;
+}
+
+input {
+    padding: 0.5rem;
+    width: fit-content;
+    background-color: transparent;
+    color: #242424;
+}
+
+.reveal-button {
+    margin-right: 0.5rem;
+    width: 17rem;
+    border: 2px solid #242424;
+    border-radius: 4px;
+    background-color: transparent;
+    color: #242424;
+}
+
+.location {
+    padding: 0.6em 1.2em;
+    border-radius: 4px;
+    color: #242424;
+    font-size: 1.1rem;
+    transition: 400ms;
+}
+
+.hide-location {
+    background-color: #242424;
+}
+
+.reveal-location {
+    background-color: transparent;
+}
+
+span {
+    font-weight: 800;
 }
